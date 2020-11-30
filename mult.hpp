@@ -20,6 +20,9 @@ class Mult: public Base{
 	virtual string stringify(){
 	   return left->stringify() + " * " + right->stringify();
 	}
+	virtual Iterator* create_iterator(){
+	   return BinaryIterator(this);
+	}
 };
 
 #endif //__MULT_HPP

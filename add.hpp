@@ -21,6 +21,9 @@ class Add : public Base {
 	virtual string stringify() {
 	   return left->stringify() + " + " + right->stringify();
 	}
+	virtual Iterator* create_iterator(){
+	   return BinaryIterator(this);
+	}
 };
 
 class threeAddSevenMock: public Base{
