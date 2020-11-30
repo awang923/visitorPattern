@@ -29,6 +29,9 @@ class Mult: public Base{
         return Object2;
         }
 
+	virtual Iterator* create_iterator(){
+	   return BinaryIterator(this);
+	}
 
 };
 
