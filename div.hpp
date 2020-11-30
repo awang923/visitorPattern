@@ -17,5 +17,8 @@ Object2 = ob2;
         virtual double evaluate() { return Object1->evaluate()/Object2->evaluate(); }
         virtual std::string stringify() { return Object1->stringify()+ " / " +Object2->stringify(); }
 
+         Iterator* create_iterator(){
+	  return new BinaryIterator(this);
+	}
 };
 #endif //DIV_HPP

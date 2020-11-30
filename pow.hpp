@@ -15,6 +15,9 @@ Object2 = ob2;
  }
         virtual double evaluate() { return pow(Object1->evaluate(), Object2->evaluate()); }
         virtual std::string stringify() { return Object1->stringify()+ " ** " + Object2->stringify(); }
-
+	
+	 Iterator* create_iterator(){
+          return new BinaryIterator(this);
+        }
 };
 #endif //POW_HPP

@@ -11,6 +11,10 @@ class Op : public Base {
         Op(double value) : Base() {val = value; }
         virtual double evaluate() { return val; }
         virtual std::string stringify() { return to_string(val); }
+	
+	 Iterator* create_iterator(){
+          return new NullIterator(this);
+        }
 };
 
 class SevenOpMock: public Base{
