@@ -20,6 +20,15 @@ class Rand : public Base {
 	 Iterator* create_iterator(){
           return new NullIterator(this);
         }
+
+	virtual Base* get_left(){
+        return nullptr;
+        }
+
+        virtual Base* get_right(){
+        return nullptr;
+        }
+
 };
 
 #endif //__RAND_HPP

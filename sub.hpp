@@ -15,5 +15,13 @@ Object2 = ob2;
         virtual double evaluate() { return Object1->evaluate() - Object2->evaluate(); }
         virtual std::string stringify() { return Object1->stringify()+ " - " +Object2->stringify(); }
 
+	virtual Base* get_left(){
+	return Object1;
+	}
+
+	virtual Base* get_right(){
+        return Object2;
+        }
+
 };
 #endif //SUB_HPP
