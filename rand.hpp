@@ -16,6 +16,10 @@ class Rand : public Base {
 	}
         virtual double evaluate() { return val; }
         virtual std::string stringify() { return to_string(val); }
+
+	 Iterator* create_iterator(){
+          return new NullIterator(this);
+        }
 };
 
 #endif //__RAND_HPP
