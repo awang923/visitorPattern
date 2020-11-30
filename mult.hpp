@@ -22,15 +22,15 @@ class Mult: public Base{
 	}
 
 	virtual Base* get_left(){
-        return Object1;
+        return left;
         }
 
         virtual Base* get_right(){
-        return Object2;
+        return right;
         }
 
 	virtual Iterator* create_iterator(){
-	   return BinaryIterator(this);
+	   return new BinaryIterator(this);
 	}
 
 };
