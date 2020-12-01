@@ -29,7 +29,7 @@ public:
 	}
 
 	virtual Iterator* create_iterator(){
-	   return BinaryIterator(this);
+	   return new BinaryIterator(this);
 	}
 };
 #endif //SUB_HPP
