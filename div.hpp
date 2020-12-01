@@ -29,7 +29,7 @@ Object2 = ob2;
         return Object2;
         }
         
- 	void accept(CountVisitor* visit){
+ 	virtual void accept(CountVisitor* visit){
 		visit->visit_div();
 	}
 };

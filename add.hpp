@@ -34,7 +34,7 @@ class Add : public Base {
 	   return new BinaryIterator(this);
 	}
 	
-	  void accept(CountVisitor* visit){
+	virtual void accept(CountVisitor* visit){
                 visit->visit_add();
         }
 };

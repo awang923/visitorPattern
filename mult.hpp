@@ -33,7 +33,7 @@ class Mult: public Base{
 	   return new BinaryIterator(this);
 	}
 	
-	  void accept(CountVisitor* visit){
+	virtual void accept(CountVisitor* visit){
                 visit->visit_mult();
         }
 };

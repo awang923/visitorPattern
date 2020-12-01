@@ -31,5 +31,9 @@ public:
 	virtual Iterator* create_iterator(){
 	   return new BinaryIterator(this);
 	}
+	virtual void accept(CountVisitor* visit){
+            visit->visit_sub();
+        }
+
 };
 #endif //SUB_HPP
