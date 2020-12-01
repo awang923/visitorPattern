@@ -27,6 +27,9 @@ Object2 = ob2;
         virtual Base* get_right(){
         return Object2;
         }
-
+	
+	  void accept(CountVisitor* visit){
+                visit->visit_pow();
+        }
 };
 #endif //POW_HPP

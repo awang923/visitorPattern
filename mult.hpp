@@ -32,7 +32,10 @@ class Mult: public Base{
 	virtual Iterator* create_iterator(){
 	   return new BinaryIterator(this);
 	}
-
+	
+	  void accept(CountVisitor* visit){
+                visit->visit_mult();
+        }
 };
 
 #endif //__MULT_HPP
