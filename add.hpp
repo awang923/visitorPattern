@@ -33,7 +33,10 @@ class Add : public Base {
 	virtual Iterator* create_iterator(){
 	   return new BinaryIterator(this);
 	}
-
+	
+	  void accept(CountVisitor* visit){
+                visit->visit_add();
+        }
 };
 
 class threeAddSevenMock: public Base{
