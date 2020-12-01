@@ -13,7 +13,7 @@
 #include "pow.hpp"
 
 TEST(itTest, addGetLeft){
-	  Base* left = new Op(3);
+    Base* left = new Op(3);
     Base* right = new Op(7);
     Add* test = new Add(left,right);
     EXPECT_EQ(test->get_left()->evaluate(), 3); 
@@ -103,5 +103,56 @@ TEST(itTest, randGetRight){
    EXPECT_TRUE( tst->get_right() == nullptr);
    }
 
+TEST(itTest, AddIterator){
+  Base* left = new Op(3);
+  Base* right = new Op(5);
+  Add* test = new Add(left, right);
+  Iterator* it = test->create_iterator();
+  EXPECT_EQ(it->current()->evaluate(), 3);
+  it->next();
+  EXPECT_EQ(it->current()->evaluate(), 5);
+}
+
+TEST(itTest, divIterator){
+	Base* o1 = new Op(9);
+	Base* o2 = new Op(1);
+	Div* test = new Div(o1,o2);
+	Iterator* it = test->create_iterator();
+	EXPECT_EQ(it->current()->evaluate(),9);
+	it->next();
+	EXPECT_EQ(it->current()->evaluate(), 1);
+}
+
+TEST(itTest, PowIterator){
+	Base* o1 = new Op(2);
+	Base* o2 = new Op(3);
+	Pow* test = new Pow(o1,o2);
+	Iterator* it = test->create_iterator();
+	EXPECT_EQ(it->current()->evaluate(),2);
+	it->next();
+	EXPECT_EQ(it->current()->evaluate(),3);
+}
+
+TEST(itTest, opIterator){
+	Op* test = new Op(9);
+	Iterator* it = test->create_iterator();
+	EXPECT_TRUE(it->current() == nullptr);
+}
+
+TEST(itTest, randIterator){
+	Rand* test = new Rand();
+	Iterator* it = test->create_iterator();
+	EXPECT_TRUE(it->current()== nullptr);
+}
+
+TEST(itTest, multIterator){
+	Base* left = new Op(4);
+  Base* right = new Op(5);
+  Mult* test = new Mult(left, right);
+  Iterator* it = test->create_iterator();
+  EXPECT_EQ(it->current()->evaluate(), 4);
+  it->next();
+  EXPECT_EQ(it->current()->evaluate(), 5);
+}
 
 #endif //__ITTEST_HPP__
