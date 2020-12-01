@@ -1,6 +1,6 @@
 #ifndef __COUNT_VISITOR_HPP__
 #define __COUNT_VISITOR_HPP__
-
+#include "iterator.hpp"
 class CountVisitor{
     private:
         int ops;
@@ -12,22 +12,22 @@ class CountVisitor{
         int pow;
 
     public:
-        CountVisitor();
+        CountVisitor(): ops(0),rands(0),mults(0),divs(0),add(0),sub(0),pow(0){}
 
         void visit_op();
-        int op_count();
+        int op_count(){ops++;}
         void visit_rand();
-        int rand_count();
+        int rand_count(){rands++;}
         void visit_mult();
-        int mult_count();
+        int mult_count(){mults++;}
         void visit_div();
-        int div_count();
+        int div_count(){divs++;}
         void visit_add();
-        int add_count();
+        int add_count(){add++;}
         void visit_sub();
-        int sub_count();
+        int sub_count(){sub++}
         void visit_pow();
-        int pow_count();
+        int pow_count(){pow++}
 
 };
 
