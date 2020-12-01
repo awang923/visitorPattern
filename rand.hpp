@@ -28,6 +28,9 @@ class Rand : public Base {
         virtual Base* get_right(){
         return nullptr;
         }
+	void accept(CountVisitor* visit){
+        visit->visit_rand();
+        }
 
 };
 
